@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>Content List</title>
+	</head>	
+	<body>
+		<div>
+			<h1 th:text="'Benvenuto nella lista contenuti'"/>
+			
+			<h2 th:text="'Ecco la lista dei migliori film:'"/>
+			<ul th:if ="${movieList.size() > 0}">
+				<li th:each="singleMovie: ${movieList}" th:text="${singleMovie.getTitle()}"></li>	
+			</ul>
+			
+			<h2 th:text="'Ecco la lista delle migliori canzoni:'"/>
+			<ul th:if ="${songList.size() > 0}">
+				<li th:each="singleSong: ${songList}" th:text="${singleSong.getTitle()}"></li>	
+			</ul>
+		</div>
+	</body>
+</html>

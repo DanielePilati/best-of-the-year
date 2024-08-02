@@ -50,6 +50,15 @@ public class RootController {
 		return "songs";
 	}
 	
+	@GetMapping("/itemlist")
+	public String itemlist( Model model) {
+			
+		model.addAttribute("songList", getBestSongs());
+		model.addAttribute("movieList", getBestMovies());
+		
+		return "itemlist";
+	}
+	
 	
 	private ArrayList<Movie> getBestMovies() {
 		
