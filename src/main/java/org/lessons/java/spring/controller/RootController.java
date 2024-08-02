@@ -32,33 +32,35 @@ public class RootController {
 		String text = "";
 		for (Movie movie : getBestMovies()) {
 			text += movie.getTitle() + ", ";
-			System.out.println(text);
 		}
-		
 		model.addAttribute("movieList", text);
 		
 		return "movies";
 	}
+	
 	@GetMapping("/songs")
 	public String songs( Model model) {
 		
-		
+		String text = "";
+		for (Song song : getBestSongs()) {
+			text += song.getTitle() + ", ";
+		}
+		model.addAttribute("songList", text);
 		
 		return "songs";
 	}
 	
 	
-	
 	private ArrayList<Movie> getBestMovies() {
 		
-		ArrayList<Movie> songList = new ArrayList<Movie>();
-		songList.add(new Movie("Anger Games", 3));
-		songList.add(new Movie("Avangers", 4));
-		songList.add(new Movie("Il Padrino", 2));		
-		songList.add(new Movie("Il Gladiatore", 5));
-		songList.add(new Movie("Film sbagliato", 10));
-	
-		return new ArrayList<Movie>();
+		ArrayList<Movie> movieList = new ArrayList<Movie>();
+		movieList.add(new Movie("Anger Games", 3));
+		movieList.add(new Movie("Avangers", 4));
+		movieList.add(new Movie("Il Padrino", 2));		
+		movieList.add(new Movie("Il Gladiatore", 5));
+		movieList.add(new Movie("Film sbagliato", 10));
+			
+		return movieList;
 	}
 	private ArrayList<Song> getBestSongs() {
 		
@@ -69,7 +71,9 @@ public class RootController {
 		songList.add(new Song("Shine on you Crazy Dimond", 5));
 		songList.add(new Song("Canzone sbagliata", 10));
 
-		return new ArrayList<Song>();
+		return songList;
 	}
+	
+	
 
 }
