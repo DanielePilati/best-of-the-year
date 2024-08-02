@@ -29,7 +29,7 @@ public class Song {
 	}
 	
 	public void setVote(float vote) {
-		if (vote == 0 && vote <= 5) {
+		if (vote >= 0 && vote <= 5) {
 			this.vote = vote;
 		} else {
 			this.vote = 0;

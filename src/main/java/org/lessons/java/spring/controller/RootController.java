@@ -29,11 +29,19 @@ public class RootController {
 	@GetMapping("/movies")
 	public String movies( Model model) {
 		
+		String text = "";
+		for (Movie movie : getBestMovies()) {
+			text += movie.getTitle() + ", ";
+			System.out.println(text);
+		}
+		
+		model.addAttribute("movieList", text);
 		
 		return "movies";
 	}
 	@GetMapping("/songs")
 	public String songs( Model model) {
+		
 		
 		
 		return "songs";
