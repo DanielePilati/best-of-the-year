@@ -5,21 +5,13 @@
 	</head>		
 	<body>
 <!--header-->	
-		<header th:replace="fragments :: header">
-			
+		<header th:replace="fragments :: header">		
 		</header>
 <!--main-->			
 		<main>
 			<div class="container-sm text-center px-3">
 				<h1>[[${h1}]]</h1>
-				<div class="row justify-content-center">
-					<div class="card col-2" style="width: 18rem;">
-						 <img th:src="|${image}|" class="card-img-top" alt="Movie image">
-						 <div class="card-body">
-						  	 <p th:text="${name}"></p>
-						 </div>
-					</div>
-				</div>
+				<div th:replace="fragments :: show-details"></div>
 			</div>	
 		</main>
 <!--footer-->		
@@ -29,6 +21,5 @@
 	</body>
 <!--scripts-->		
 	<div th:replace="fragments :: scripts"></div>
-
 
 </html>

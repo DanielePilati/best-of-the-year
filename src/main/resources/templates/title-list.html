@@ -5,20 +5,13 @@
 	</head>		
 	<body>
 <!--header-->	
-		<header th:replace="fragments :: header">
-			
+		<header th:replace="fragments :: header">			
 		</header>
 <!--main-->			
 		<main>
 			<div class="container-sm text-center px-3">
-					<h1>Best [[${title}]]</h1>
-					<div class="list-group">
-						<a 	th:each="element : ${list}" 
-						    th:text="|${title} ${element.id+1}|" 
-						    th:href="|/${title.toLowerCase()}/${element.id}|" 
-						    class="list-group-item list-group-item-action" 
-							>
-					</div>	
+				<h1>[[${h1}]]</h1>
+				<div th:replace="fragments :: generate-list"></div>
 			</div>	
 		</main>
 <!--footer-->		

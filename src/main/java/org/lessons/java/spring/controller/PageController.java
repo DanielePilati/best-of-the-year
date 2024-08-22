@@ -28,6 +28,7 @@ public class PageController {
 	public String movies( Model model) {
 		model.addAttribute("list", getBestMovies());
 		model.addAttribute("title", "Movies");
+		model.addAttribute("h1", "Best Movies");
 		return "title-list";
 	}
 	
@@ -35,6 +36,7 @@ public class PageController {
 	public String songs( Model model) {
 		model.addAttribute("list", getBestSongs());
 		model.addAttribute("title", "Songs");
+		model.addAttribute("h1", "Best Songs");
 		return "title-list";
 	}
 	
