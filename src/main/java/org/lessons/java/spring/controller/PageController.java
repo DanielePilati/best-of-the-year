@@ -20,8 +20,9 @@ public class PageController {
 		model.addAttribute("name", "Daniele Pilati");
 		model.addAttribute("image", "/img/film-img.gif");
 		model.addAttribute("h1", "Best of By");
+		model.addAttribute("type", "show-details");
 		
-		return "your-title";
+		return "main-model";
 	}
 	
 	@GetMapping("/movies")
@@ -29,7 +30,8 @@ public class PageController {
 		model.addAttribute("list", getBestMovies());
 		model.addAttribute("title", "Movies");
 		model.addAttribute("h1", "Best Movies");
-		return "title-list";
+		model.addAttribute("type", "generate-list");
+		return "main-model";
 	}
 	
 	@GetMapping("/songs")
@@ -37,7 +39,8 @@ public class PageController {
 		model.addAttribute("list", getBestSongs());
 		model.addAttribute("title", "Songs");
 		model.addAttribute("h1", "Best Songs");
-		return "title-list";
+		model.addAttribute("type", "generate-list");
+		return "main-model";
 	}
 	
 	@GetMapping("/songs/{id}")
@@ -52,7 +55,8 @@ public class PageController {
 		model.addAttribute("name", title);
 		model.addAttribute("image", "/img/film-img.gif");
 		model.addAttribute("h1", "Your Song is");
-		return "your-title"; 																				
+		model.addAttribute("type", "show-details");
+		return "main-model"; 																				
 	}
 	
 	@GetMapping("/movies/{id}")
@@ -67,7 +71,8 @@ public class PageController {
 		model.addAttribute("name", title);
 		model.addAttribute("image", "/img/film-img.gif");
 		model.addAttribute("h1", "Your Movie  is");
-		return "your-title";																				
+		model.addAttribute("type", "show-details");
+		return "main-model";																				
 	}
 		
 	

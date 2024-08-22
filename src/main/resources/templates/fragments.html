@@ -28,14 +28,23 @@
 			  </div>
 			</nav>
 		</header>
+		
+<!-- fragments :: main-standard -->		
+		<div th:fragment="main-standard"
+			 class="container-sm text-center px-3">
+			<h1>[[${h1}]]</h1>
+			<ul th:replace="~{fragments :: ${type}}"></ul>
+		</div>	
+		
 <!-- fragments :: generate-list -->		
-		<div th:fragment="generate-list" class="list-group">
-			<a 	th:each="element : ${list}" 
+		<ul th:fragment="generate-list" class="list-group">
+			<li th:each="element : ${list}" 
 			    th:text="|${title} ${element.id+1}|" 
 			    th:href="|/${title.toLowerCase()}/${element.id}|" 
 			    class="list-group-item list-group-item-action" 
 				>
-		</div>
+		</ul>
+		
 <!-- fragments :: show-details -->			
 		<div th:fragment="show-details" class="row justify-content-center">
 			<div class="card col-2" style="width: 18rem;">
@@ -45,12 +54,12 @@
 				</div>
 			</div>
 		</div>
-		
+				
 <!-- fragments :: scripts -->		
-		<div th:fragment="scripts">
+		<th:block th:fragment="scripts">
 			<!-- BOOTSTRAP SCRIPT -->
 			<script th:src="@{/webjars/bootstrap/5.3.3/js/bootstrap.bundle.min.js}" defer></script>
-		</div>
+		</th:block>
 
 	</body>
 
