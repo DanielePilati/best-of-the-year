@@ -24,24 +24,14 @@ public class PageController {
 	
 	@GetMapping("/movies")
 	public String movies( Model model) {
-		
-		String text = "";
-		for (Movie movie : getBestMovies()) {
-			text += movie.getTitle() + ", ";
-		}
-		model.addAttribute("list", text);
+		model.addAttribute("list", getBestMovies());
 		model.addAttribute("title", "Movies");
 		return "title-list";
 	}
 	
 	@GetMapping("/songs")
 	public String songs( Model model) {
-		
-		String text = "";
-		for (Song song : getBestSongs()) {
-			text += song.getTitle() + ", ";
-		}
-		model.addAttribute("list", text);
+		model.addAttribute("list", getBestSongs());
 		model.addAttribute("title", "Songs");
 		return "title-list";
 	}

@@ -1,18 +1,34 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-	<head>
-		
-		<!-- BOOTSTRAP CSS -->
-		<link rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.3/css/bootstrap.min.css}">	
-		
-		<title>[[${title}]]</title>
+	<link>	
+		<link th:replace="fragments :: head"></link>		
 	</head>		
 	<body>
-		<div>
-			<h1 th:text="'il tuo film è'"/>
-			<h2 th:text="${name}"/>		
-		</div>
+<!--header-->	
+		<header th:replace="fragments :: header">
+			
+		</header>
+<!--main-->			
+		<main>
+			<div class="container-sm text-center px-3">
+				<h1>[[${title}]]  is</h1>
+				<div class="row justify-content-center">
+					<div class="card col-2" style="width: 18rem;">
+						 <img th:src="@{/img/film-img.gif}" class="card-img-top" alt="...">
+						 <div class="card-body">
+						  	 <p th:text="${name}"></p>
+						 </div>
+					</div>
+				</div>
+			</div>	
+		</main>
+<!--footer-->		
+		<footer>
+			
+		</footer>
 	</body>
-	<!-- BOOTSTRAP SCRIPT -->
-	<script th:src="@{/webjars/bootstrap/5.3.3/js/bootstrap.bundle.min.js}" defer></script>
+<!--scripts-->		
+	<div th:replace="fragments :: scripts"></div>
+
+
 </html>

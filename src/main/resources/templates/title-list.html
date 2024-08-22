@@ -1,12 +1,30 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-	<head>
-		<title>[[${title}]]</title>
-	</head>	
+	<head>	
+		<link th:replace="fragments :: head"></link>		
+	</head>		
 	<body>
-		<div>
-			<h1 th:text="'Ecco la lista dei migliori film:'"/>
-			<h2 th:text="${list}"/>		
-		</div>
+<!--header-->	
+		<header th:replace="fragments :: header">
+			
+		</header>
+<!--main-->			
+		<main>
+			<div class="container-sm text-center px-3">
+				<div class="mx-5 px-5">
+					<h1>Best [[${title}]]</h1>
+					<div class="list-group">
+						<a th:each="element : ${list}" th:text="${element.id+1}" th:href="|/${title.toLowerCase()}/${element.id}|" >
+					</div>	
+				</div>
+			</div>	
+		</main>
+<!--footer-->		
+		<footer>
+			
+		</footer>
 	</body>
+<!--scripts-->		
+	<div th:replace="fragments :: scripts"></div>
+
 </html>
