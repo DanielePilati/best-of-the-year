@@ -54,9 +54,9 @@ public class PageController {
 				title = movie.getTitle();
 			}
 		}
-		model.addAttribute("pageTitle", "Your Song");
-		model.addAttribute("songTitle", title);
-		return ""; 																					// TODO 
+		model.addAttribute("title", "Your Song");
+		model.addAttribute("name", title);
+		return "your-title"; 																				
 	}
 	
 	@GetMapping("/movies/{id}")
@@ -67,9 +67,9 @@ public class PageController {
 				title = song.getTitle();
 			}
 		}
-		model.addAttribute("pageTitle", "Your Song");
-		model.addAttribute("movieTitle", title);
-		return "";																					// TODO 
+		model.addAttribute("title", "Your Song");
+		model.addAttribute("name", title);
+		return "your-title";																				
 	}
 		
 	
