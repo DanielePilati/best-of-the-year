@@ -14,12 +14,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/")
 public class PageController {
 		
-	@GetMapping("/bestofyear")
+	@GetMapping("/")
 	public String bestofyear( Model model) {
-		
+		model.addAttribute("title", "Home");
 		model.addAttribute("name", "Daniele Pilati");
+		model.addAttribute("image", "/img/film-img.gif");
+		model.addAttribute("h1", "Best of By");
 		
-		return "bestofyear";
+		return "your-title";
 	}
 	
 	@GetMapping("/movies")
@@ -47,6 +49,7 @@ public class PageController {
 		model.addAttribute("title", "Your Song");
 		model.addAttribute("name", title);
 		model.addAttribute("image", "/img/film-img.gif");
+		model.addAttribute("h1", "Your Song is");
 		return "your-title"; 																				
 	}
 	
@@ -61,6 +64,7 @@ public class PageController {
 		model.addAttribute("title", "Your Movie");
 		model.addAttribute("name", title);
 		model.addAttribute("image", "/img/film-img.gif");
+		model.addAttribute("h1", "Your Movie  is");
 		return "your-title";																				
 	}
 		
