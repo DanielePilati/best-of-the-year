@@ -39,26 +39,28 @@ public class PageController {
 	@GetMapping("/songs/{id}")
 	public String song(Model model, @PathVariable("id") Integer movieId) {
 		String title = null;
-		for(Movie movie : getBestMovies()) {
-			if(movieId.equals(movie.getId())) {
-				title = movie.getTitle();
+		for(Song song : getBestSongs()) {
+			if(movieId.equals(song.getId())) {
+				title = song.getTitle();
 			}
 		}
 		model.addAttribute("title", "Your Song");
 		model.addAttribute("name", title);
+		model.addAttribute("image", "/img/film-img.gif");
 		return "your-title"; 																				
 	}
 	
 	@GetMapping("/movies/{id}")
 	public String movie(Model model, @PathVariable("id") Integer songId) {
 		String title = null;
-		for(Song song : getBestSongs()) {
-			if(songId.equals(song.getId())) {
-				title = song.getTitle();
+		for(Movie movie : getBestMovies()) {
+			if(songId.equals(movie.getId())) {
+				title = movie.getTitle();
 			}
 		}
-		model.addAttribute("title", "Your Song");
+		model.addAttribute("title", "Your Movie");
 		model.addAttribute("name", title);
+		model.addAttribute("image", "/img/film-img.gif");
 		return "your-title";																				
 	}
 		
